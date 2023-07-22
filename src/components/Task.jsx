@@ -12,8 +12,6 @@ export const Task = ({
     toggleDoneTaskFunc(id);
   };
 
-  const spanClassName = completed ? "text-decoration-line-through" : "";
-
   return (
     <div className="d-flex p-3 gap-2 align-items-center border-bottom">
       {/*
@@ -22,7 +20,9 @@ export const Task = ({
         But if task is not completed : 
         <span>{title}</span>
       */}
-      <span className={spanClassName}>{title}</span>
+      <span className={completed ? "text-decoration-line-through" : ""}>
+        {title}
+      </span>
       <button className="btn btn-success" onClick={doneBtnOnClick}>
         Done
       </button>
